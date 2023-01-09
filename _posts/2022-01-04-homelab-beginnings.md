@@ -13,5 +13,5 @@ All my research ended with me purchasing a powerful little box that is the Intel
 
 ## Hypervisor
 
-I decided to go the VMWare route as it is widely used in enterprise environments.  ESXi 7.0 Update 3 was installed onto the NUC however, I had to use the [Community Networking Driver for ESXi](https://flings.vmware.com/community-networking-driver-for-esxi). This is because the network interface card (Intel i225) is not supported with ESXi version. I follow this write up by [Andrew Roderos](https://andrewroderos.com/vmware-esxi-intel-nuc-12/) to create the customized ISO image needed to deploy ESXi on the NUC.  
+I decided to go the VMWare route as it is widely used in enterprise environments.  ESXi 7.0 Update 3 was installed onto the NUC however, I had to use the [Community Networking Driver for ESXi](https://flings.vmware.com/community-networking-driver-for-esxi). This is because the network interface card (Intel i225) is not supported with ESXi version. I followed this write up by [Andrew Roderos](https://andrewroderos.com/vmware-esxi-intel-nuc-12/) to create the customized ISO image needed to deploy ESXi on the NUC.  
 
