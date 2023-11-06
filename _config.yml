@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "Henry Mendez"
-  avatar           : "/assets/images/avatar.jpg"
+  avatar           : "/images/avatar.jpg"
   bio              : "Information Technology Student"
   location         : "Los Angeles, California"
   email            :  "me@henrymendez.io"
