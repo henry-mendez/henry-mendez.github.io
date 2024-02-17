@@ -10,4 +10,8 @@ I am a senior at the California State University of Northridge, majoring in comp
 
 **Certifications:**
 
--CompTIA Security+
+- CompTIA Security+
+
+```html
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="f579ae18-1096-4988-b4d2-40e2a47ef897" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+```
