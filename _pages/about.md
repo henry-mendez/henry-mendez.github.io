@@ -8,6 +8,6 @@ comments: true
 
 I am a senior at the California State University of Northridge, majoring in computer information technology. My educational focus is network infrastructure, information security, and cloud technologies. 
 
-**Certifications:
+**Certifications:**
 
 -CompTIA Security+
