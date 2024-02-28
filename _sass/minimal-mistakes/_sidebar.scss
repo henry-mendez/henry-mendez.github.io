@@ -136,9 +136,9 @@
 
   img {
    
-    
-    width: 200px;
-    height: 180px;
+    border-radius:45%;
+    width: 300px;
+    height: 295px;
   
 
     @include breakpoint($large) {
