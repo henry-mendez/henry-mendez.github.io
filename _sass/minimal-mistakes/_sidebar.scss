@@ -137,8 +137,8 @@
   img {
    
     border-radius: 50%;
-    width: auto;
-    height:auto;
+    width: 100px;
+    height: 80px;
   
 
     @include breakpoint($large) {
