@@ -6,8 +6,9 @@ author_profile: true
 comments: true
 ---
 
-I am a senior at the California State University of Northridge, majoring in computer information technology. My educational focus is network infrastructure, information security, and cloud technologies. 
+I am a graduate of California State University, Northridge, where I earned a Bachelor of Science in Computer Information Technology. My professional interests include networking, automation, and cloud technologies.
 
+The purpose of this blog is to document my learning journey as I progress throughout my career. 
 **Certifications:**
 
 - CompTIA Security+
