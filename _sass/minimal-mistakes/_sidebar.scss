@@ -137,8 +137,9 @@
   img {
    
     border-radius:75%;
-    width: 200px;
-    height: 200px;
+    max-width: 150px;
+    height: auto;
+    object-fit: cover;
   
 
     @include breakpoint($large) {
