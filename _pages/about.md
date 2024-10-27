@@ -10,7 +10,7 @@ I am a graduate of California State University, Northridge, where I earned a Bac
 
 The purpose of this blog is to document my learning journey as I progress throughout my career. 
 
-I am currently working as Network Support Engineer at a service provider.
+I am currently working as a Network Support Engineer at a service provider.
 
 **Certifications:**
 
