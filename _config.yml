@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Henry Mendez"
   avatar           : "/images/avatar.jpg"
-  bio              : "IT Enthusiast, Guacamole Connoisseur"
+  bio              : "IT Enthusiast"
   location         : "Los Angeles, California"
   email            :  "me@henrymendez.io"
   uri              :
@@ -234,7 +234,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
-
+  - jemoji
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
