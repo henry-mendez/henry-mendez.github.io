@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Automating DNS Record Changes using Cloudflare API"
 ---
 
