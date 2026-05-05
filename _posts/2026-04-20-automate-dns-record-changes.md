@@ -16,3 +16,38 @@ To create your first API token, you will want to navigate to dash.cloudflare.com
 
 
 <img src="{{site.url}} {{ site.baseurl}}/assets/images/blog-caps/cloudflare-template.png" alt="">
+
+
+
+```bash
+#!/bin/bash
+
+ip=$(curl -s -4 --max-time 5 ifconfig.me)
+
+cfIP=$(curl -s "https://api.cloudflare.com/client/v4/zones/$ZONEID/dns_records/" \
+  -H "Authorization: Bearer $APITOKEN" \
+  | jq -r '.result.content')
+
+echo "My public IP is $ip"
+echo "CF IP is $cfIP"
+
+
+if [ "$cfIP" != "$ip" ]; then
+        curl https://api.cloudflare.com/client/v4/zones/$ZONEID/dns_records/$RECORDID \
+    -X PUT \
+    -H 'Content-Type: application/json' \
+    -H "Authorization: Bearer $APITOKEN" \
+        -d "{
+         \"name\": \"vpn.wabbledee.com\",
+         \"ttl\": 3600,
+         \"type\": \"A\",
+         \"comment\": \"\",
+         \"content\": \"$ip\",
+         \"private_routing\": false,
+         \"proxied\": false
+        }"
+        else
+        echo "no change"
+        exit 0
+        fi
+```
