@@ -12,8 +12,12 @@ To solve this, I built a simple Bash script that runs as a cron job. It periodic
 
 # Setting up your API token in Cloudflare
 
-To create your first API token, you will want to navigate to dash.cloudflare.com/profile/api-tokens. Selecting "Create API Token" will provide you with the option to create a custom token or use a template. For this script, I created a custom token with the following permissions. I've allowed the token to include all account and zone resources. 
+To create your first API token, you will want to navigate to [https://dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens). Selecting "Create API Token" will provide you with the option to create a custom token or use a template. For this script, I created a custom token with the following permissions. I've allowed the token to include all account and zone resources. 
 
+
+# The Script
+
+This script acts as a simple dynamic DNS updater for a Cloudflare-hosted domain. It first retrieves your current public IPv4 address by querying ifconfig.me, then fetches the existing A record value from Cloudflare for a specific DNS zone using the Cloudflare API. It compares the two values, and if they differ, it updates the DNS record via a PUT request so the domain points to your current IP. If the IP hasn’t changed, it exits without making any updates.
 
 <img src="{{site.url}} {{ site.baseurl}}/assets/images/blog-caps/cloudflare-template.png" alt="">
 
