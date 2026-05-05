@@ -8,3 +8,11 @@ In my homelab, I run a WireGuard server that gives me secure access to my privat
 
 To solve this, I built a simple Bash script that runs as a cron job. It periodically checks my WAN IP address and compares it against the DNS record in Cloudflare. If it detects a change, it automatically updates the record using the Cloudflare AP  ensuring my domain always points to the correct IP without any manual intervention.
 
+
+
+# Setting up your API token in Cloudflare
+
+To create your first API token, you will want to navigate to dash.cloudflare.com/profile/api-tokens. Selecting "Create API Token" will provide you with the option to create a custom token or use a template. For this script, I created a custom token with the following permissions. I've allowed the token to include all account and zone resources. 
+
+
+<img src="{{site.url}} {{ site.baseurl}}/assets/images/blog-caps/cloudflare-template.png" alt="">
