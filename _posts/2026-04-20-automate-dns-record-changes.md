@@ -6,7 +6,7 @@ title: "Automating DNS Record Changes using Cloudflare API"
 
 In my homelab, I run a WireGuard server that gives me secure access to my private home network from anywhere. Like most setups, I prefer using a readable domain name instead of remembering or typing a raw IP address. On top of that, residential ISP connections don’t always guarantee a static IP, so I can’t assume my home address will stay the same over time.
 
-To solve this, I built a simple Bash script that runs as a cron job. It periodically checks my WAN IP address and compares it against the DNS record in Cloudflare. If it detects a change, it automatically updates the record using the Cloudflare AP  ensuring my domain always points to the correct IP without any manual intervention.
+To solve this, I built a simple Bash script that runs as a cron job. It periodically checks my WAN IP address and compares it against the DNS record in Cloudflare. If it detects a change, it automatically updates the record using the Cloudflare API ensuring my domain always points to the correct IP without any manual intervention.
 
 
 
@@ -26,27 +26,24 @@ This script acts as a simple dynamic DNS updater for a Cloudflare-hosted domain.
 ```bash
 #!/bin/bash
 
-ip=$(curl -s -4 --max-time 5 ifconfig.me)
+homeIP=$(curl -s -4 --max-time 5 ifconfig.me)
 
-cfIP=$(curl -s "https://api.cloudflare.com/client/v4/zones/$ZONEID/dns_records/" \
+cloudflareIP=$(curl -s "https://api.cloudflare.com/client/v4/zones/$ZONEID/dns_records/" \
   -H "Authorization: Bearer $APITOKEN" \
   | jq -r '.result.content')
 
-echo "My public IP is $ip"
-echo "CF IP is $cfIP"
 
-
-if [ "$cfIP" != "$ip" ]; then
+if [ "$cloudflareIP" != "$homeIP" ]; then
         curl https://api.cloudflare.com/client/v4/zones/$ZONEID/dns_records/$RECORDID \
     -X PUT \
     -H 'Content-Type: application/json' \
     -H "Authorization: Bearer $APITOKEN" \
         -d "{
-         \"name\": \"vpn.wabbledee.com\",
+         \"name\": \"vpn.domain.com\",
          \"ttl\": 3600,
          \"type\": \"A\",
          \"comment\": \"\",
-         \"content\": \"$ip\",
+         \"content\": \"$homeIP\",
          \"private_routing\": false,
          \"proxied\": false
         }"
